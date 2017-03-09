@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 /**
- * Created by moon on 2017/3/8.
+ * Created by moon on 2017/girl/8.
  */
 
 public class ChangeHeadImagePop extends PopupWindow implements View.OnClickListener {

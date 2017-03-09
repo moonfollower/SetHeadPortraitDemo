@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity{
                     Toast.makeText(MainActivity.this,"剪切完毕",Toast.LENGTH_SHORT).show();
                     //上传图片，然后设置图片
                     if(null !=cropImageUri){
-
                         Log.e("剪切图片地址",cropImageUri.getPath());
                         Bitmap bitmap = BitmapFactory.decodeFile(imageDirPath+File.separator+crop_ImageName);
                         circleImageView.setImageBitmap(bitmap);
