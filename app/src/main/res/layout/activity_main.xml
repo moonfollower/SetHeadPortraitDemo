@@ -11,15 +11,19 @@
             android:id="@+id/img_portrait"
             app:border_width = "1dp"
             app:border_color = "#f00"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_margin="8dp"
+            android:src="@drawable/girl"
+            android:layout_width="72dp"
+            android:layout_height="72dp"/>
 
         <Button
             android:id="@+id/btn_change"
-            android:text="更换"
+            android:text="点击更换头像"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/colorPrimary"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="28dp" />
 
 </RelativeLayout>
