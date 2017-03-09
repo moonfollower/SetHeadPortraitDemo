@@ -28,7 +28,7 @@ public class ChangeHeadImagePop extends PopupWindow implements View.OnClickListe
 
     /**
      *
-     * @author ywl5320 枚举，用于区分选择了哪个选项
+     * @author moon 枚举，用于区分选择了哪个选项
      */
     public enum MENUITEM {
         ITEM1, ITEM2, ITEM3
@@ -117,7 +117,4 @@ public class ChangeHeadImagePop extends PopupWindow implements View.OnClickListe
         }
         dismiss();
     }
-
-
-
 }

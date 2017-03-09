@@ -68,14 +68,14 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(ChangeHeadImagePop.MENUITEM item, String str) {
                 switch (item){
+                    //拍照
                     case ITEM1:
-
                         File dir = new File(imageDirPath);
                         if(!dir.exists()){
                             dir.mkdirs();
                         }
 
-                        File file = new File(dir,takePhotoImageName);
+                        File file = new File(dir,takePhotoImageName);//指定拍照后相片保存地址，以覆盖方式保存。
                         Log.e("相机存放图片地址",file.getAbsolutePath());
                         iconUri = Uri.fromFile(file);
                         // 启动相机
@@ -84,11 +84,13 @@ public class MainActivity extends AppCompatActivity{
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, iconUri);
                         startActivityForResult(intent, REQUEST_CODE_TAKE_PHOTO);
                         break;
+                    //手机相册中选择
                     case ITEM2:
                         Intent intent2 = new Intent(Intent.ACTION_PICK, null);
                         intent2.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
                         startActivityForResult(intent2, REQUEST_CODE_CHOOSE_IMAGE);
                         break;
+                    //取消
                     case ITEM3:
 
                         break;
@@ -112,7 +114,6 @@ public class MainActivity extends AppCompatActivity{
                 case REQUEST_CODE_TAKE_PHOTO:
                     if(null != iconUri){
                         File file = new File(iconUri.getPath());
-
                         Log.e("文件是否存在",file.exists()+"");
                         // 打开相机页面后，如果按返回键也会回调，所以需要判断是否拍摄了照片
                         if (file.exists()) {
@@ -131,26 +132,17 @@ public class MainActivity extends AppCompatActivity{
                     break;
                 case REQUEST_CODE_CROP_IMAGE:
                     Toast.makeText(MainActivity.this,"剪切完毕",Toast.LENGTH_SHORT).show();
-                    //上传图片，然后设置图片
+                    //上传图片，然后设置图片，这里不上传图片。
                     if(null !=cropImageUri){
                         Log.e("剪切图片地址",cropImageUri.getPath());
                         Bitmap bitmap = BitmapFactory.decodeFile(imageDirPath+File.separator+crop_ImageName);
                         circleImageView.setImageBitmap(bitmap);
                         bitmap.recycle();
                     }
-
                     break;
             }
-
-
-
-
     }
 
-
-    /**
-     * 更新UI
-     */
 
     /**
      * 裁剪图片
