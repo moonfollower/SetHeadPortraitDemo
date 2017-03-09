@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity{
                         Log.e("剪切图片地址",cropImageUri.getPath());
                         Bitmap bitmap = BitmapFactory.decodeFile(imageDirPath+File.separator+crop_ImageName);
                         circleImageView.setImageBitmap(bitmap);
+                        bitmap.recycle();
                     }
 
                     break;
